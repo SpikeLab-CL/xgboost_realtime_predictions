@@ -31,12 +31,12 @@ with open('path/to/the/model.dill', 'wb') as file:
 
 ##### In production
 
-Now you can upload your model (in dill) to [Google Cloud Storage](https://cloud.google.com/storage/)
+Now you have to save `model.dill` in your app directory
 
 Create a file called `config.py` and add the following data:
 ```
 config = {
-    "model_path":"gs://path_to_model/model.dill",
+    "model_path":"app/path_to_model/model.dill",
     "threshold": 0.5 #threshold for the class
 }
 ```
