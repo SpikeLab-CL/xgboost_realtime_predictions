@@ -4,7 +4,7 @@ Template application for serving [XGBoost](https://xgboost.readthedocs.io/en/lat
 
 #### Usage 
 
-##### While training your model
+#### While training your model
 
 The notebook `traing/training_model.ipyinb` contains a simple example of training a model with XGBoost, then we need to save in [dill](https://pypi.org/project/dill/) the following object which will be our model:
 ```
@@ -17,7 +17,7 @@ model = {
     "model": xgboost,
     "col_names":X_train.columns.tolist()
 }
-```
+``` 
 Where:
 + `encoders` are [LabelEncoder](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html) for your categorical features and `variable` is the name of the feature to encode. If your model doesn't use LabelEncoders you can leave the list empty.
 + `model` is the trained XGBClassifier instance.
@@ -29,7 +29,7 @@ with open('path/to/the/model.dill', 'wb') as file:
     dill.dump(model, file)
 ```
 
-##### In production
+#### In production
 
 Now you have to save `model.dill` in your app directory
 
@@ -51,7 +51,7 @@ Now you can upload your service with the command:
 gcloud app deploy app.yaml
 ```
 
-##### Making calls to the app
+#### Making calls to the app
 
 When the service is ready Google AppEngine will give you the `url` to your service endpoint, the you can make passing your input as query string:
 Example
