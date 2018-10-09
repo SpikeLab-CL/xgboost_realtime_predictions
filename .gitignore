@@ -4,4 +4,4 @@ env/
 config.py
 lib/
 .DS_Store
-.vscode
+.vscode/

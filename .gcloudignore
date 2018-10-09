@@ -20,3 +20,4 @@ env/
 .ipynb_checkpoints
 lib/
 .DS_Store
+.vscode
