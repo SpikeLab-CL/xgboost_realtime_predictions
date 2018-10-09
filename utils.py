@@ -27,6 +27,6 @@ def make_response(features, prediction):
     response = {}
     for feature, value in features.items():
         response[feature] = value
-    response["survival_probability"] = str(prediction)
+    response["probability"] = str(prediction)
     response["class"] = "1" if prediction > config['threshold'] else "0"
     return json.dumps(response)

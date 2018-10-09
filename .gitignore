@@ -1,0 +1,6 @@
+env/
+*.pyc
+.ipynb_checkpoints
+config.py
+lib/
+.DS_Store
