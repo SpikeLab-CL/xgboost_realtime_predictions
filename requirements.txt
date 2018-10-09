@@ -3,3 +3,5 @@ xgboost
 Flask>=1.0
 scikit-learn
 pandas
+gunicorn
+gcloud==0.18.1
