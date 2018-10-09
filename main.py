@@ -6,8 +6,7 @@ from utils import make_response
 
 app = Flask(__name__)
 
-#model_path = download_file_from_storage(config['model_path'])
-model_path = "model.dill"
+model_path = download_file_from_storage(config['model_path'])
 model = Model(model_path)
 
 @app.route('/', methods = ['GET'])
