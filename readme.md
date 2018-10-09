@@ -1,6 +1,6 @@
 ## Realtime predictions using XGBoost in Google AppEngine
 
-Template application for serving [XGBoost](https://xgboost.readthedocs.io/en/latest/) models in Google AppEngine (using the 2nd generation of runtimes), the idea of the project is generate a template as base for easy deployment of models in a production enviorement.
+Template application for serving [XGBoost](https://xgboost.readthedocs.io/en/latest/) models in Google AppEngine (using the 2nd generation of runtimes), the idea of the project is generate a template as base for easy deployment of models in a production environment.
 
 #### Usage 
 
