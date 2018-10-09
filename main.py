@@ -6,7 +6,9 @@ from utils import make_response
 
 app = Flask(__name__)
 
-model_path = download_file_from_storage(config['model_path'])
+#model_path = download_file_from_storage(config['model_path'])
+#TODO sacar el modelo desde la API de Google
+model_path = "model.dill"
 model = Model(model_path)
 
 @app.route('/', methods = ['GET'])
