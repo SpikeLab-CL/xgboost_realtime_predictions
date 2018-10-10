@@ -1,13 +1,14 @@
 from flask import Flask, request
-from utils import download_file_from_storage
 from config import config
 from model import Model
 from utils import make_response
+from storage import download_model
+import dill
 
 app = Flask(__name__)
 
-model_path = config['model_path']
-model = Model(model_path)
+model_str = download_model(config['bucket'], config['model_gs_path'])
+model = Model(model_str)
 
 @app.route('/', methods = ['GET'])
 def main():

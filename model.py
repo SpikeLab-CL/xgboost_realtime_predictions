@@ -5,16 +5,15 @@ import xgboost as xgb
 class Model():
     """Wrapper to the model
         Arguments:
-            model_path: string to the model in dill format
+            model_str: string serialized dill object in string format
     """    
-    def __init__(self, model_path):
-        self.model_path = model_path
+    def __init__(self, model_str):
+        self.model_str = model_str
         self.model = None
         self._load_model()
 
     def _load_model(self):
-        with open(self.model_path, 'rb') as file:
-            self.model = dill.load(file)
+        self.model = dill.loads(self.model_str)
     
     def predict(self, input_):
         """predict probabilities for a given input
@@ -57,7 +56,7 @@ class Model():
 
     @property
     def features_names(self):
-        """Wrapper to the model
+        """Get the features names from the model
             Return:
                features_names : string with the training column names
          """ 
