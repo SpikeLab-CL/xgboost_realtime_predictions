@@ -1,6 +1,6 @@
 ## Realtime predictions using XGBoost in Google AppEngine
 
-Template application for serving [XGBoost](https://xgboost.readthedocs.io/en/latest/) models in Google AppEngine (using the 2nd generation of runtimes), the idea of the project is generate a template as base for easy deployment of models in a production environment.
+Template application for serving [XGBoost](https://xgboost.readthedocs.io/en/latest/) models in Google AppEngine (using the 2nd generation of runtimes), the idea of the project is generate a template as base for easy deployment of models in a production environment, the models are loaded from a bucket in Google Cloud Storage.
 
 #### Usage 
 
@@ -31,13 +31,14 @@ with open('path/to/the/model.dill', 'wb') as file:
 
 #### In production
 
-Now you have to save `model.dill` in your app directory
+Now you have to save `model.dill` in a Google Cloud Storage bucket.
 
 Create a file called `config.py` and add the following data:
 ```
 config = {
-    "model_path":"app/path_to_model/model.dill",
-    "threshold": 0.5 #threshold for the class
+    "threshold": 0.5,
+    "bucket":"gcs_bucket_name",
+    "model_gs_path":"path/to/model.dill"
 }
 ```
 Open the file `app.yaml` and set:

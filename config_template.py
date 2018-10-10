@@ -1,4 +1,5 @@
 config = {
-    "model_path":"gs://path_to_model/model.dill",
-    "threshold": 0.5
+    "threshold": 0.5,
+    "bucket":"gcs_bucket_name",
+    "model_gs_path":"path/to/model.dill"
 }
