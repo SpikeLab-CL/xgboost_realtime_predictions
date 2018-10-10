@@ -42,11 +42,17 @@ class Model():
         for feature in self.features_names:
             encoder = [encoder for encoder in self.model['encoders'] if feature in encoder]
             if len(encoder) == 1:
-                encoder = encoder[0][1]
-                encoded_feat = encoder.transform([input_.get(feature)])[0]
-                features_ = np.append(features_, [encoded_feat])
+                if input_.get(feature) != None:
+                    encoder = encoder[0][1]
+                    encoded_feat = encoder.transform([input_.get(feature)])[0]
+                    features_ = np.append(features_, [encoded_feat])
+                else:
+                    features_ = np.append(features_, np.nan)
             else:
-                features_ = np.append(features_, [input_.get(feature)])
+                if input_.get(feature) != None:
+                    features_ = np.append(features_, [input_.get(feature)])
+                else:
+                    features_ = np.append(features_, np.nan)
         return features_
 
     @property
